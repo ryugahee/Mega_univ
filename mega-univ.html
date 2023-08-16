@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>메가대학교</title>
+    <link href="mega-univ.css" rel="stylesheet" />
+    <link href="reset.css" rel="stylesheet" />
+    <link
+      rel="stylesheet"
+      as="style"
+      crossorigin
+      href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.8/dist/web/static/pretendard.css"
+    />
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <div class="wrap">
+          <h1>
+            <button>메가대학교</button>
+          </h1>
+          <nav>
+            <ul>
+              <li>
+                <button class="logout">로그아웃</button>
+              </li>
+            </ul>
+          </nav>
+          <div class="logoutModal">
+            <div class="logoutContents">
+              <p class="univ-name">메가대학교</p>
+              <p class="modal-title">로그아웃</p>
+              <p class="guid">로그아웃 하시겠습니까?</p>
+              <div class="check-close">
+                <button
+                  id="logoutCheck"
+                  onclick="location.href='login-page.html'"
+                >
+                  확인
+                </button>
+                <button id="logoutClose">취소</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <hr />
+        <h3>류가희 님 안녕하세요!</h3>
+      </header>
+      <div class="main">
+        <div class="container">
+          <section id="info">
+            <img src="gom.jpg" alt="사진" class="info_img" />
+            <div class="student">
+              <p class="name">류가희 <span class="name2">학생</span></p>
+              <br />
+              <p>게임공학과</p>
+              <br />
+              <p>3.88 / 4.5</p>
+            </div>
+            <table>
+              <tr>
+                <th>학번</th>
+                <th>생년월일</th>
+                <th>나이</th>
+              </tr>
+              <tr>
+                <td>20230811</td>
+                <td>1992.09.10</td>
+                <td>만 30세</td>
+              </tr>
+              <tr>
+                <th>지도교수</th>
+                <th>재적 상태</th>
+                <th>주소</th>
+              </tr>
+              <tr>
+                <td>김기찬 교수</td>
+                <td>졸업</td>
+                <td>부산광역시</td>
+              </tr>
+            </table>
+          </section>
+        </div>
+        <div class="container2">
+          <article id="subject">
+            <div>
+              <div class="sub_btn">
+                <h2>수강 과목</h2>
+                <button class="plus">+</button>
+              </div>
+              <div class="plusModal">
+                <div class="plusContents">
+                  <p class="univ-name">메가대학교</p>
+                  <p class="modal-title">수강 과목 생성</p>
+                  <p class="guid">수강 과목 정보를 입력 해주세요.</p>
+                  <input
+                    type="text"
+                    class="subject-id"
+                    placeholder="교과목명"
+                  /><br />
+                  <input
+                    type="text"
+                    class="professor"
+                    placeholder="담당 교수"
+                  /><br />
+                  <input type="text" class="grade" placeholder="학점" /><br />
+                  <input
+                    type="text"
+                    class="classType"
+                    placeholder="전공/교양"
+                  /><br />
+                  <div class="new-close">
+                    <button id="plusNew">생성</button>
+                    <button id="plusClose">취소</button>
+                  </div>
+                </div>
+              </div>
+              <table class="subject-name">
+                <tr>
+                  <th>교과목명</th>
+                  <th>담당 교수</th>
+                  <th>학점</th>
+                  <th>전공/교양</th>
+                  <th></th>
+                </tr>
+                <tr>
+                  <td>팀장이란</td>
+                  <td>김기찬 교수</td>
+                  <td>3</td>
+                  <td>전공</td>
+                  <td class="parent">
+                    <button class="setBtn">설정</button>
+                    <div class="child">
+                      <div class="as">
+                        <form class="radioForm">
+                          <input
+                            type="radio"
+                            id="radioBtn"
+                            value="수정"
+                          /><label for="radioBtn">수정</label>
+                          <input
+                            type="radio"
+                            id="radioBtn2"
+                            value="제거"
+                          /><label for="radioBtn2">제거</label>
+                        </form>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td>부팀장이란</td>
+                  <td>이한형 교수</td>
+                  <td>3</td>
+                  <td>전공</td>
+                  <td>
+                    <button class="setBtn">설정</button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>프론트란</td>
+                  <td>정민이 교수</td>
+                  <td>3</td>
+                  <td>전공</td>
+                  <td>
+                    <button class="setBtn">설정</button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>인프라란</td>
+                  <td>박효관 교수</td>
+                  <td>3</td>
+                  <td>교양</td>
+                  <td>
+                    <button class="setBtn">설정</button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>스태틱이란</td>
+                  <td>황정민 교수</td>
+                  <td>3</td>
+                  <td>교양</td>
+                  <td>
+                    <button>설정</button>
+                  </td>
+                </tr>
+              </table>
+              <!-- <div class="as">
+                <form class="radioForm">
+                  <input type="radio" id="radioBtn" value="수정" /><label
+                    for="radioBtn"
+                    >수정</label
+                  >
+                  <input type="radio" id="radioBtn2" value="제거" /><label
+                    for="radioBtn2"
+                    >제거</label
+                  >
+                </form>
+              </div> -->
+            </div>
+          </article>
+          <div class="container3">
+            <div class="gr">
+              <article id="grade">
+                <h2>이수 학점</h2>
+                <table>
+                  <tr>
+                    <th>총 이수학점</th>
+                    <th>전공</th>
+                    <th>교양</th>
+                  </tr>
+                  <tr>
+                    <td>60 / 120</td>
+                    <td>24 / 80</td>
+                    <td>36 / 40</td>
+                  </tr>
+                </table>
+              </article>
+            </div>
+            <div class="sch">
+              <article id="schedule">
+                <h2>시간표</h2>
+                <table>
+                  <tr>
+                    <th></th>
+                    <th>월</th>
+                    <th>화</th>
+                    <th>수</th>
+                    <th>목</th>
+                    <th>금</th>
+                  </tr>
+                  <tr>
+                    <td>1</td>
+                    <td>팀장..</td>
+                    <td></td>
+                    <td>부팀장..</td>
+                    <td>프론트..</td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td>2</td>
+                    <td>인프라..</td>
+                    <td>스태틱..</td>
+                    <td></td>
+                    <td>팀장..</td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td>3</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td>4</td>
+                    <td>부팀장..</td>
+                    <td>프론트..</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td>5</td>
+                    <td></td>
+                    <td></td>
+                    <td>스태틱..</td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                </table>
+              </article>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="./js/mega-univ.js"></script>
+  </body>
+</html>

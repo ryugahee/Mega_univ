@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>로그인</title>
+    <link href="login-page.css" rel="stylesheet" />
+    <link href="reset.css" rel="stylesheet" />
+    <link
+      rel="stylesheet"
+      as="style"
+      crossorigin
+      href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.8/dist/web/static/pretendard.css"
+    />
+  </head>
+  <div class="wrapper">
+    <body>
+      <div class="loginPage">
+        <div class="loginContents">
+          <p class="univ-name">메가대학교</p>
+          <input type="text" class="id" placeholder="아이디" /><br />
+          <input
+            type="password"
+            class="password"
+            placeholder="비밀번호"
+          /><br />
+          <div class="log-join">
+            <button id="loginBtn">로그인</button>
+            <button id="joinBtn" onclick="location.href='join-page.html'">
+              회원가입
+            </button>
+          </div>
+        </div>
+      </div>
+    </body>
+  </div>
+</html>
