@@ -1,0 +1,11 @@
+{
+  "subjects": [
+    {
+      "title": "JSP",
+      "professor": "김유범",
+      "credit": "3",
+      "type": "교양",
+      "id": 1
+    }
+  ]
+}

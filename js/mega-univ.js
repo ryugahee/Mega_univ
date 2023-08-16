@@ -27,6 +27,7 @@ logoutClose.addEventListener("click", () => {
 });
 
 //수상 과목 생성 버튼
+/*
 const plusNew = document.getElementById("plusNew");
 const table = document.getElementsByClassName("subject-name")[0];
 
@@ -56,26 +57,7 @@ plusNew.addEventListener("click", () => {
 
   plusModal.style.display = "none";
 
-  // const newRow = table.insertRow();
-  // const cells = [];
-  // for (let i = 0; i < 5; i++) {
-  //   cells.push(newRow.insertCell(i));
-  //   cells[i].innerText;
-  // }
-  // cells[0] = subjectId;
-  // cells[1] = professor;
-  // cells[2] = grade;
-  // cells[3] = classType;
-  // cells[4].appendChild(button);
-  // newRow.style = "border-bottom : 1px solid rgb(0, 0, 0, 0.1)";
-});
-
-//   // 테이블에서 행 삭제
-//   function deleteRow() {
-//     var table = document.getElementById("myTable").getElementsByTagName('tbody')[0];
-//     var lastRow = table.rows.length - 1;
-//     table.deleteRow(lastRow);
-//   }
+});*/
 
 // 설정 버튼
 const setBtn = document.getElementsByClassName("setBtn")[0];
@@ -85,3 +67,107 @@ const as = document.getElementsByClassName("as")[0];
 setBtn.addEventListener("click", () => {
   as.style.display = "block";
 });
+
+/*
+GET    /subjects    // 모든 수강 과목 읽기 요청
+GET    /subjects/1  // 1번 수강 과목 읽기 요청
+POST   /subjects    // 수강 과목 생성 요청
+PUT    /subjects/1  // 1번 수강 과목 수정 요청
+DELETE /posts/1     // 1번 수강 과목 삭제 요청
+*/
+
+// 수강 과목 생성 GET
+/*
+const plusNew = document.getElementById("plusNew");
+
+plusNew.addEventListener("click", () => {
+  getData();
+  plusModal.style.display = "none";
+});
+
+function getData() {
+  fetch("http://localhost:5000/subjects")
+    .then((res) => res.json())
+    .then((data) => {
+      const arr = [];
+      for (const subjects of data) {
+        arr.push(`<tr>`);
+        arr.push(`<td>${subjects.title}</td>`);
+        arr.push(`<td>${subjects.professor} 교수</td>`);
+        arr.push(`<td>${subjects.credit}</td>`);
+        arr.push(`<td>${subjects.type}</td>`);
+        arr.push(`<td><button class="setBtn">설정</button></td>`);
+        arr.push(`</tr>`);
+      }
+
+      document.getElementById("subjectJ").innerHTML = arr.join("");
+    });
+}
+*/
+
+// 수강 과목 POST
+const plusNew = document.getElementById("plusNew");
+
+plusNew.addEventListener("click", () => {
+  const subjectId = document.getElementsByClassName("subject-id")[0].value;
+  const professor = document.getElementsByClassName("professor")[0].value;
+  const grade = document.getElementsByClassName("grade")[0].value;
+  const classType = document.getElementsByClassName("classType")[0].value;
+
+  let subjects = {
+    subjectId: subjectId,
+    professor: professor,
+    grade: grade,
+    classType: classType,
+  };
+
+  fetch("http://localhost:5000/subjects", {
+    method: "POST",
+    body: JSON.stringify(subjects),
+    headers: { "content-type": "application/json" },
+  })
+    .then((res) => res.json())
+    .then((data) => console.log(data));
+
+  // 수강 과목 생성 GET
+  fetch("http://localhost:5000/subjects")
+    .then((res) => res.json())
+    .then((data) => {
+      const arr = [];
+      for (const subjects of data) {
+        arr.push(`<tr>`);
+        arr.push(`<td>${subjects.title}</td>`);
+        arr.push(`<td>${subjects.professor} 교수</td>`);
+        arr.push(`<td>${subjects.credit}</td>`);
+        arr.push(`<td>${subjects.type}</td>`);
+        arr.push(`<td><button class="setBtn">설정</button></td>`);
+        arr.push(`</tr>`);
+      }
+
+      document.getElementById("subjectJ").innerHTML = arr.join("");
+    });
+});
+
+// 수강 과목 생성 PUT
+/*
+function putData() {
+  fetch("http://localhost:5000/subjects", {
+    method: "PUT",
+    body: JSON.stringify(subjects),
+    headers: { "content-type": "application/json" },
+  })
+    .then((res) => res.json())
+    .then((data) => console.log(data));
+}
+*/
+
+// 수강 과목 생성 DELETE
+/*
+function deleteData() {
+  fetch("http://localhost:5000/subjects", {
+    method: "DELETE",
+  })
+    .then((res) => res.json())
+    .then((data) => console.log(data));
+}
+*/

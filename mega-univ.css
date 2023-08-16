@@ -293,40 +293,26 @@ input::placeholder {
   font-weight: bold;
   font-size: x-large;
 }
-#subject table {
+.subject-name {
   font-weight: bold;
   margin: auto;
-}
-#subject tr th {
+  padding: 5px;
   border-bottom: 1px solid rgb(0, 0, 0, 0.1);
-  padding: 5px;
-}
-
-#subject tr td {
   text-align: center;
-  padding: 5px;
-  position: relative;
+}
+.subject-name tr th {
+  border-bottom: 1px solid rgb(0, 0, 0, 0.1);
+  padding-bottom: 10px;
 }
 
-#subject tr td:nth-child(1) {
-  width: 180px;
-}
-#subject tr td:nth-child(2) {
-  width: 150px;
-}
-#subject tr td:nth-child(3) {
-  width: 70px;
-}
-#subject tr td:nth-child(4) {
-  width: 100px;
-}
-#subject tr td:nth-child(5) {
-  width: 90px;
+.subject-name tr td {
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
 
-#subject tr td button {
+.subject-name button {
   width: 50px;
-  height: 20px;
+  height: 30px;
   background-color: black;
   color: white;
   border: 0;
@@ -334,9 +320,6 @@ input::placeholder {
   cursor: pointer;
 }
 
-#subject tr:nth-child(6) {
-  border-bottom: 1px solid rgb(0, 0, 0, 0.1);
-}
 /* 라디오 버튼 */
 .as {
   display: none;
